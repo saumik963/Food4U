@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Contact Start -->
+<div class="container-fluid pt-5">
+  <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">A Small Bio About Me</span></h2>
+  </div>
+  <div class="row px-xl-5">
+      <div class="col-lg-7 mb-5">
+          
+        <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
+          <img src="{% static 'images\banners\Spicy.png' %}" alt="Burger" width="350" height="170" style='position:sticky;max-width:50%;padding-block-start:initial;max-height:50%;'>
+          <div class="position-relative" style="z-index: 1;">
+              <h5 class="text-uppercase text-primary mb-3">20% off on special items</h5>
+              <h1 class="mb-4 font-weight-semi-bold">Rainy Day Offer</h1>
+              <a href="{%url 'store' %}" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
+          </div>
+      </div>
+
+      </div>
+
+
+
+      <div class="col-lg-5 mb-5">
+          <h4 class="font-weight-semi-bold mb-3">I'm Designer Saumik Das</h4>
+          <p>This is my firs live project on Django.</p>
+          <div class="d-flex flex-column mb-3">
+              <h5 class="font-weight-semi-bold mb-3">Skills</h5>
+              <p class="mb-2"><i class="fa fa-check-circle text-primary mr-3"></i>C/C++</p>
+              <p class="mb-2"><i class="fa fa-check-circle text-primary mr-3"></i>Python with OOPs</p>
+              <p class="mb-2"><i class="fa fa-check-circle text-primary mr-3"></i>MySQL</p>
+              <p class="mb-2"><i class="fa fa-check-circle text-primary mr-3"></i>Django</p>
+              <p class="mb-2"><i class="fa fa-check-circle text-primary mr-3"></i>HTML/CSS</p>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+
+{% endblock %}

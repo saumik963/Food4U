@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="section-content padding-y bg">
+<div class="container">
+
+
+
+<!-- ============================ COMPONENT 1 ================================= -->
+
+
+
+<!-- Checkout Start -->
+<div class="container-fluid pt-3">
+  <div class="row px-xl-3">
+      <div class="col-lg-8">
+          <div class="mb-4">
+              <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+                
+                <form action="{% url 'place_order' %}" method="POST">
+                  {% csrf_token %}
+
+                  <div class="row">
+
+                    <div class="col-md-6 form-group">
+                      <label for="">First Name</label>
+                      <input type="text" name="first_name" class="form-control" placeholder="John" required>
+                    </div>
+            
+                    <div class="col-md-6 form-group">
+                      <label for="">Last Name</label>
+                      <input type="text" name="last_name" class="form-control" placeholder="Wick" required>
+                    </div>
+            
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <label for="">Email</label>
+                      <input type="email" name="email" class="form-control" placeholder="example@gmail.com" required>
+                    </div>
+            
+                    <div class="col-md-6 form-group">
+                      <label for="">Phone Number</label>
+                      <input type="text" name="phone" class="form-control" placeholder="+123 456 789" required>
+                    </div>
+            
+                  </div>
+            
+                  <div class="row">
+
+                    <div class="col-md-6 form-group">
+                      <label for="">Address Line 1</label>
+                      <input type="text" name="address_line_1" class="form-control" placeholder="221B Baker Street" required>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                      <label for="">Address Line 2</label>
+                      <input type="text" name="address_line_2" class="form-control" placeholder="221B Baker Street">
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    
+                    <div class="col-md-6 form-group">
+                      <label for="">City</label>
+                      <input type="text" name="city" class="form-control" placeholder="New York" required>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                      <label for="">State</label>
+                      <input type="text" name="state" class="form-control" placeholder="New York" required>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                      <label for="">Country</label>
+                      <input type="text" name="country" class="form-control" placeholder="Bangladesh" required>
+                    </div>
+
+                    </div>
+
+                    <div class="row">
+                      <label for="">Order Note</label>
+                      <textarea name="order_note" rows="2" class="form-control"></textarea>
+                    </div>
+                  
+                
+
+              </div>
+            </div>
+            
+
+                  
+      
+      <div class="col-lg-4">
+          <div class="card border-secondary mb-5">
+              <div class="card-header bg-secondary border-0">
+                  <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+              </div>
+              <div class="card-body">
+                  <h5 class="font-weight-medium mb-3">Products</h5>
+                  {% for cart_item in cart_items %}
+                  
+                  <div class="d-flex justify-content-between">
+                      <p>{{cart_item.product.product_name}}</p>
+                      <p>৳ {{cart_item.sub_total}}</p>
+                  </div>
+                  
+                  {% endfor %}
+                  <hr class="mt-0">
+                  <div class="d-flex justify-content-between mb-3 pt-1">
+                      <h6 class="font-weight-medium">Subtotal</h6>
+                      <h6 class="font-weight-medium">৳ {{total}}</h6>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                      <h6 class="font-weight-medium">Shipping Charge</h6>
+                      <h6 class="font-weight-medium">৳ {{shipping}}</h6>
+                  </div>
+              </div>
+              <div class="card-footer border-secondary bg-transparent">
+                  <div class="d-flex justify-content-between mt-2">
+                      <h5 class="font-weight-bold">Total</h5>
+                      <h5 class="font-weight-bold">৳ {{grand_total}}</h5>
+                  </div>
+              </div>
+
+              <div class="card-footer border-secondary bg-transparent">
+                <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+            </div>
+
+          </form>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Checkout End -->
+
+
+<!-- ============================ COMPONENT 1 END .// ================================= -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}

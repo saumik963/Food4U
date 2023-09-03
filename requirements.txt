@@ -1,0 +1,8 @@
+install pacages==
+Django version 4.2.3
+sslcommerz_lib
+
+Pacage install guide==
+
+1. python -m pip install Django
+2. pip install sslcommerz-lib
