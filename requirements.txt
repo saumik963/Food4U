@@ -1,3 +1,3 @@
 Django==4.2.3
-sslcommerz_lib==1.0
-Pillow
+sslcommerz-lib==1.0
+Pillow==9.5.0
